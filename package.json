@@ -1,0 +1,28 @@
+{
+  "name": "test-pyramid",
+  "version": "0.1.0",
+  "description": "Test Pyramid Presentation coding examples",
+  "scripts": {
+    "lint": "gplint --fix",
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/QAClique/test-pyramid"
+  },
+  "keywords": [
+    "API",
+    "Karate",
+    "Pyramid"
+  ],
+  "author": "QA Clique",
+  "license": "ISC",
+  "dependencies": {
+    "@karatelabs/karate": "^0.3.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "gplint": "2.3.0"
+  }
+}

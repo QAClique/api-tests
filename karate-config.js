@@ -13,7 +13,7 @@ function fn() {
 
   const config = {
     env: env,
-    myVarName: "someValue"
+    root: java.lang.System.getProperty('user.dir')
   }
   if (env === "dev") {
     // customize

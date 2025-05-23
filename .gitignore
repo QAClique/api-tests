@@ -137,3 +137,6 @@ dist
 
 # Karate
 target
+
+# MacOS
+.DS_Store
