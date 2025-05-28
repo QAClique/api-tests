@@ -2,6 +2,7 @@
   "name": "test-pyramid",
   "version": "0.1.0",
   "description": "Test Pyramid Presentation coding examples",
+  "type": "module",
   "scripts": {
     "lint": "gplint --fix",
     "test": "node test.js"
