@@ -1,7 +1,7 @@
 {
-  "name": "test-pyramid",
+  "name": "test-pyramid-api",
   "version": "0.1.0",
-  "description": "Test Pyramid Presentation coding examples",
+  "description": "Test Pyramid Presentation API test examples",
   "type": "module",
   "scripts": {
     "lint": "gplint --fix",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/QAClique/test-pyramid"
+    "url": "https://github.com/QAClique/test-pyramid-api"
   },
   "keywords": [
     "API",
