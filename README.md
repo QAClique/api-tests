@@ -14,6 +14,6 @@ From the command-line do the following:
 npm test karate/funds.aum.tsx.feature
 ```
 
-You can also execute tests directly in Visual Studio Code. Install the [Karate Runner](https://marketplace.visualstudio.com/items?itemName=kirkslota.karate-runner) to do so and you'll see a "Karate Run" button appear in the `.feature` test files above the `Feature` and `Scenario` keywords.
+You can also execute tests directly in Visual Studio Code. Install the [Karate Runner](https://marketplace.visualstudio.com/items?itemName=kirkslota.karate-runner) to do so and you'll see a `Karate Run` button appear in the `.feature` test files above the `Feature` and `Scenario` keywords.
 
 Test reports are located in `target` folder, look for `karate-summary.html` to see the full results.
