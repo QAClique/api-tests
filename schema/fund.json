@@ -1,0 +1,24 @@
+{
+  "symbol":         "#string",
+  "symbolName":     "#string",
+  "lastPrice":      "#string",
+  "priceChange":    "#string",
+  "percentChange":  "#string",
+  "managedAssets":  "#string",
+  "tradeTime":      "#regex ^[0-9]{2}/[0-9]{2}/[0-9]{2}$",
+  "symbolType":     "#number",
+  "exchange":       "CADFUNDS",
+  "symbolCurrency": "#regex ^(CAD|USD)$",
+  "raw": {
+    "symbol":         "#string",
+    "symbolName":     "#string",
+    "lastPrice":      "#number",
+    "priceChange":    "#number",
+    "percentChange":  "#number",
+    "managedAssets":  "#number",
+    "tradeTime":      "#number",
+    "symbolType":     "#number",
+    "exchange":       "CADFUNDS",
+    "symbolCurrency": "#regex ^(CAD|USD)$"
+  }
+}
