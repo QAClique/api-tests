@@ -48,3 +48,20 @@ Scenario: Wrong type for field "orderDir" in request
   When method POST
   Then status 500
   And match response.error == "Server error"
+
+#---------------------------------------------------------------------------------------------------
+Scenario Outline: Invalid HTTP method <method>
+#---------------------------------------------------------------------------------------------------
+
+  Given request payload
+  When method <method>
+  Then status 404
+  And match response contains "<pre>Cannot <method> /api/funds</pre>"
+
+Examples:
+  | method   |
+  | DELETE   |
+  | GET      |
+  | PATCH    |
+  | PUT      |
+  | TRACE    |
