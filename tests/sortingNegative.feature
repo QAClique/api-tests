@@ -1,5 +1,5 @@
 #---------------------------------------------------------------------------------------------------
-Feature: Globe And Mail - Mutual fund leaders Negative Tests
+Feature: Sorting Negative Tests
 #---------------------------------------------------------------------------------------------------
 
 #---------------------------------------------------------------------------------------------------
@@ -59,9 +59,9 @@ Scenario Outline: Invalid HTTP method <method>
   And match response contains "<pre>Cannot <method> /api/funds</pre>"
 
 Examples:
-  | method   |
-  | DELETE   |
-  | GET      |
-  | PATCH    |
-  | PUT      |
-  | TRACE    |
+  | method |
+  | DELETE |
+  | GET    |
+  | PATCH  |
+  | PUT    |
+  | TRACE  |
