@@ -1,7 +1,7 @@
 {
-  "name": "test-pyramid-api",
+  "name": "api-tests",
   "version": "0.1.0",
-  "description": "Test Pyramid Presentation API test examples",
+  "description": "API test cases example using Karate framework for \"Stop Testing End to End\" Presentation",
   "type": "module",
   "scripts": {
     "lint": "gplint --fix",
@@ -9,12 +9,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/QAClique/test-pyramid-api"
+    "url": "https://github.com/QAClique/api-tests"
   },
   "keywords": [
     "API",
-    "Karate",
-    "Pyramid"
+    "Karate"
   ],
   "author": "QA Clique",
   "license": "ISC",
@@ -24,6 +23,6 @@
   "devDependencies": {
     "eslint": "^8.57.1",
     "eslint-config-airbnb-base": "^15.0.0",
-    "gplint": "2.3.0"
+    "gplint": "^2.4.1"
   }
 }
