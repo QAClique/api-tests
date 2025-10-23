@@ -6,7 +6,7 @@ Feature: Sorting Negative Tests
 Background:
 #---------------------------------------------------------------------------------------------------
 
-  * url `${baseUrl}`
+  * url baseUrl
 
   * def payload =
     """

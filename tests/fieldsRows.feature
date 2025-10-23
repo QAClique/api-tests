@@ -6,7 +6,7 @@ Feature: Number of Funds and Fields Tests
 Background:
 #---------------------------------------------------------------------------------------------------
 
-  * url `${baseUrl}`
+  * url baseUrl
 
 #---------------------------------------------------------------------------------------------------
 Scenario: Verify number of funds returned
