@@ -6,7 +6,7 @@ Feature: Sorting Positive Tests
 Background:
 #---------------------------------------------------------------------------------------------------
 
-  * url `${baseUrl}`
+  * url baseUrl
 
 #---------------------------------------------------------------------------------------------------
 Scenario Outline: Sorting check per field <field>
@@ -31,15 +31,15 @@ Scenario Outline: Sorting check per field <field>
   Then status 200
   And match response == fundListSchema
   # Sort the response data ourselves to confirm it did sort properly
-  And def sortedResponse = karate.sort(response.data, x => x.raw.<field>)
+  And def sortedResponse = karate.sort(response.data, <numbers> ? x => parseFloat(x.<field>) : x => x.<field>)
   And match response.data == sortedResponse
 
 Examples:
-  | field         |
-  | symbol        |
-  | symbolName    |
-  | lastPrice     |
-  | priceChange   |
-  | percentChange |
-  | managedAssets |
-  | tradeTime     |
+  | field         | numbers |
+  | symbol        | false   |
+  | symbolName    | false   |
+  | lastPrice     | true    |
+  | priceChange   | true    |
+  | percentChange | true    |
+  | managedAssets | true    |
+  | tradeTime     | false   |
