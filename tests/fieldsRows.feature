@@ -7,6 +7,8 @@ Background:
 #---------------------------------------------------------------------------------------------------
 
   * url baseUrl
+  * def fundSchema = read(`file:${root}/schema/fund.json`)
+  * def fundListSchema = read(`file:${root}/schema/fundlist.json`)
 
 #---------------------------------------------------------------------------------------------------
 Scenario: Verify number of funds returned
@@ -14,6 +16,7 @@ Scenario: Verify number of funds returned
 
   * def randomFundNumber = Math.floor(Math.random() * 10) + 1
 
+  # The schema assumes the default set of fields, since we are modifying the list, we can't do schema validation here
   Given request
     """
     {
@@ -27,6 +30,7 @@ Scenario: Verify number of funds returned
     """
   When method POST
   Then status 200
+  And match header Content-Type == "application/json; charset=utf-8"
   And match response.count == randomFundNumber
   And assert response.data.length == randomFundNumber
 
@@ -34,9 +38,7 @@ Scenario: Verify number of funds returned
 Scenario Outline: Verify field <field> is returned
 #---------------------------------------------------------------------------------------------------
 
-  * def fundSchema = read(`file:${root}/schema/fund.json`)
-  * def fundListSchema = read(`file:${root}/schema/fundlist.json`)
-
+  # The schema assumes the default set of fields, since we are modifying the list, we can't do schema validation here
   Given request
     """
     {
@@ -50,6 +52,7 @@ Scenario Outline: Verify field <field> is returned
     """
   When method POST
   Then status 200
+  And match header Content-Type == "application/json; charset=utf-8"
   And match each response.data[*].<field> == "#present"
 
 Examples:
@@ -67,9 +70,6 @@ Examples:
 Scenario: Verify all fields are returned
 #---------------------------------------------------------------------------------------------------
 
-  * def fundSchema = read(`file:${root}/schema/fund.json`)
-  * def fundListSchema = read(`file:${root}/schema/fundlist.json`)
-
   Given request
     """
     {
@@ -83,6 +83,7 @@ Scenario: Verify all fields are returned
     """
   When method POST
   Then status 200
+  And match header Content-Type == "application/json; charset=utf-8"
   And match response == fundListSchema
   And match response.total == 200
 
@@ -102,5 +103,7 @@ Scenario: Default limit
     """
   When method POST
   Then status 200
+  And match header Content-Type == "application/json; charset=utf-8"
+  And match response == fundListSchema
   And match response.count == 200
   And assert response.data.length == 200
