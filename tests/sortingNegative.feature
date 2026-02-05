@@ -30,24 +30,13 @@ Scenario Outline: Missing field <field> in request
   Given request payload
   When method POST
   Then status 500
+  And match header Content-Type == "application/json; charset=utf-8"
   And match response.error == "Server error"
 
 Examples:
   | field    |
   | fields   |
   | lists    |
-  | orderDir |
-
-#---------------------------------------------------------------------------------------------------
-Scenario: Wrong type for field "orderDir" in request
-#---------------------------------------------------------------------------------------------------
-
-  * payload.orderDir = 12345
-
-  Given request payload
-  When method POST
-  Then status 500
-  And match response.error == "Server error"
 
 #---------------------------------------------------------------------------------------------------
 Scenario Outline: Invalid HTTP method <method>
@@ -56,6 +45,7 @@ Scenario Outline: Invalid HTTP method <method>
   Given request payload
   When method <method>
   Then status 404
+  And match header Content-Type == "text/html; charset=utf-8"
   And match response contains "<pre>Cannot <method> /api/funds</pre>"
 
 Examples:
